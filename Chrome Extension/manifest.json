@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Tweet Mood",
+  "version": "0.1",
+  "description": "Add the sentiment of tweet",
+
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["https://twitter.com/*"]
+    }
+  ],
+
+  "icons": {
+    "128": "images/icon.png"
+  },
+
+  "action": {
+    "default_icon": {
+      "128": "images/icon.png"
+    },
+
+    "default_title": "Tweet Mood"
+  }
+}

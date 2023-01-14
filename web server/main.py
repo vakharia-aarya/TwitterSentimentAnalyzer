@@ -1,5 +1,5 @@
 from flask import Flask, request
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 import language
 import json
 
@@ -16,6 +16,7 @@ def main():
 def language_detection():
     if request.method == 'POST':
         data = request.json
+      
         res = list()
 
         for tweets in data:
@@ -49,5 +50,5 @@ def language_sentiment():
         return json.dumps(res,ensure_ascii=False).encode('utf8')
 
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)

@@ -1,28 +1,31 @@
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-import string
+import detectlanguage
+from constants import API_KEY
+
 
 def detect_language(text):
-    if isinstance(text, str):
-        try:
-            text.encode('ascii')
-        except UnicodeEncodeError:
-            return False
+    
+    text = text.strip()
+    detectlanguage.configuration.api_key = API_KEY
 
-    for ch in text:
-        if ch not in string.printable:
-            return False
-    return True    
+    if text:
+        detected_lang = detectlanguage.simple_detect(text)
+        if detected_lang == 'en':
+            return True
+    
+
+    return False
+
 
 def get_sentiment(text):
     analyzer = SentimentIntensityAnalyzer()
     vs = analyzer.polarity_scores(text)
-    # print("{:-<65} {}".format(text, str(vs)))
 
     mood = ""
 
     if vs['compound'] >= 0.05:
         mood = 'POSITIVE'
-    elif vs['compound'] > -0.05 and vs['compound'] < 0.05:
+    elif (vs['compound'] > -0.05) and (vs['compound'] < 0.05):
         mood = 'NEUTRAL'
     else:
         mood = 'NEGATIVE'
@@ -38,3 +41,4 @@ def get_sentiment(text):
         'detected_mood':mood
     }  
     return prediction
+
