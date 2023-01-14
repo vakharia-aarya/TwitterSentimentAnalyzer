@@ -1,1 +1,1 @@
-# TweeterSentimentAnalyzer
+# TwitterSentimentAnalyzer
