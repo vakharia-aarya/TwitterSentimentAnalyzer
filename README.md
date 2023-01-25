@@ -71,4 +71,4 @@ The chrome extension is made using manifest 3 and JavaScript. The chrome extensi
 Once the tweet sentiment is detected the extension sets the detected mood of the tweet denoted by a smiling, neutral or frowning emoji in the DOM itself. It ensures that the style and presentation of the new element matches the client UI.
 
 Example Image:
-![Detected Mood for a tweet by Tesla](https://github.com/vakharia-aarya/TwitterSentimentAnalyzer/tree/main/Images/tweet_mood_detected.png)
+![Detected Mood for a tweet by Tesla](https://github.com/vakharia-aarya/TwitterSentimentAnalyzer/blob/main/Images/tweet_mood_detected.png)
