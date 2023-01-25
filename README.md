@@ -32,7 +32,7 @@ The web server is hosted on the Google Cloud Platform (GCP) and contains two fil
 
 2.  `https://sentanalysistweeter.wl.r.appspot.com/api/sentiment-score`
 
-Is a post request which accepts JSON array of objects similar to the prior endpoint and returns the sentiment score for each tweet and the overall sentiment for the give tweet.
+Is a post request which accepts JSON array of objects similar to the prior endpoint and returns the sentiment score for each tweet and the overall sentiment for the given tweet.
 
 **Sample Response**
 
@@ -40,9 +40,9 @@ Is a post request which accepts JSON array of objects similar to the prior endpo
         {
     	    "tweet_text": "Stats on Twitter World Cup",
     	    "sentiment_score": {
-                "positive": 0.0,
-                "neutral": 1.0,
-                "negative": 0.0
+                    "positive": 0.0,
+                    "neutral": 1.0,
+                    "negative": 0.0
     	     },
             "detected_mood": "NEUTRAL"
         },
